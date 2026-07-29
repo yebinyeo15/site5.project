@@ -40,6 +40,8 @@
                                     class="category-chip category-chip--filter"
                                     type="button"
                                     aria-label="필터 열기"
+                                    aria-controls="filter-sheet"
+                                    aria-expanded="true"
                                 >
                                     <img src="images/icon-filter.svg" alt="" />
                                 </button>
@@ -82,12 +84,24 @@
                     </nav>
                 </header>
 
-                <section class="filter-sheet" aria-labelledby="filter-title">
-                    <div class="filter-sheet__handle" aria-hidden="true"></div>
+                <section
+                    id="filter-sheet"
+                    class="filter-sheet"
+                    aria-labelledby="filter-title"
+                >
+                    <button
+                        class="filter-sheet__handle"
+                        type="button"
+                        aria-label="필터 닫기"
+                    ></button>
 
                     <header class="filter-sheet__header">
                         <h1 id="filter-title">필터</h1>
-                        <button class="icon-button" type="button" aria-label="필터 닫기">
+                        <button
+                            class="icon-button filter-sheet__close"
+                            type="button"
+                            aria-label="필터 닫기"
+                        >
                             <img src="images/icon-close.svg" alt="" />
                         </button>
                     </header>
