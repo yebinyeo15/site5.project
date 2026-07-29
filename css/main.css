@@ -1,0 +1,350 @@
+:root {
+    --color-primary: #167673;
+    --color-primary-soft: #d4f7f6;
+    --color-text-primary: #191919;
+    --color-text-secondary: #5e6167;
+    --color-background: #ffffff;
+    --color-border: #d6d8dc;
+    --color-border-strong: #a2a7ac;
+    --shadow-sheet: 0 4px 20px rgb(0 0 0 / 20%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+body {
+    min-width: 360px;
+    color: var(--color-text-primary);
+    background: #f3f4f5;
+    font-family: "Pretendard", sans-serif;
+}
+
+#wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.map-filter {
+    position: relative;
+    width: 360px;
+    height: 740px;
+    overflow: hidden;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+}
+
+.map-filter__map {
+    position: absolute;
+    top: 47px;
+    left: -140px;
+    width: 828px;
+    height: 673px;
+    max-width: none;
+    object-fit: cover;
+}
+
+.search-panel {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 16px;
+    overflow: hidden;
+    background: var(--color-background);
+}
+
+.search-panel__bar {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+    padding: 12px 20px;
+}
+
+.icon-button {
+    display: grid;
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    place-items: center;
+    background: transparent;
+}
+
+.icon-button img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 24px;
+    max-height: 24px;
+    object-fit: contain;
+}
+
+.search-field {
+    display: flex;
+    flex: 1;
+    gap: 8px;
+    align-items: center;
+    height: 40px;
+    padding: 10px 12px;
+    background: var(--color-background);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 4px;
+}
+
+.search-field__icon {
+    width: 18px;
+    height: 18px;
+    margin: 3px;
+}
+
+.search-field__input {
+    min-width: 0;
+    height: 20px;
+    flex: 1;
+    padding: 0;
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+}
+
+.search-field__input::-webkit-search-cancel-button {
+    display: none;
+}
+
+.search-field__cancel {
+    width: 13.333px;
+    height: 13.333px;
+    margin: 1.333px;
+}
+
+.category-nav {
+    width: 100%;
+    overflow: hidden;
+}
+
+.category-nav__list {
+    display: flex;
+    gap: 8px;
+    width: max-content;
+    padding: 0 20px;
+}
+
+.category-chip {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    height: 28px;
+    padding: 6px 12px;
+    color: var(--color-text-secondary);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    white-space: nowrap;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+}
+
+.category-chip img {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+}
+
+.category-chip--selected,
+.category-chip--filter {
+    color: #fff;
+    font-weight: 700;
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.category-chip--filter {
+    width: 36px;
+    padding: 2px 6px;
+}
+
+.category-chip--filter img {
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+}
+
+.filter-sheet {
+    position: absolute;
+    z-index: 3;
+    bottom: -1px;
+    left: 50%;
+    display: flex;
+    width: 360px;
+    height: 600px;
+    overflow: hidden;
+    flex-direction: column;
+    background: var(--color-background);
+    border-radius: 16px 16px 0 0;
+    box-shadow: var(--shadow-sheet);
+    transform: translateX(-50%);
+}
+
+.filter-sheet__handle {
+    position: relative;
+    flex: 0 0 16px;
+    height: 16px;
+}
+
+.filter-sheet__handle::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 48px;
+    height: 4px;
+    background: var(--color-border);
+    border-radius: 4px;
+    content: "";
+    transform: translateX(-50%);
+}
+
+.filter-sheet__header {
+    display: flex;
+    flex: 0 0 68px;
+    gap: 16px;
+    align-items: center;
+    padding: 20px;
+}
+
+.filter-sheet__header h1 {
+    flex: 1;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.filter-form {
+    display: flex;
+    min-height: 0;
+    flex: 1;
+    flex-direction: column;
+}
+
+.filter-form__contents {
+    height: 436px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.filter-form__contents::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-group {
+    min-width: 0;
+    margin: 0;
+    padding: 0 0 32px;
+    border: 0;
+}
+
+.filter-group legend {
+    width: 100%;
+    min-height: 64px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.filter-group__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 20px;
+}
+
+.filter-chip {
+    min-height: 28px;
+    padding: 5px 12px;
+    color: var(--color-text-secondary);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    white-space: nowrap;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+}
+
+.filter-chip.is-selected {
+    color: var(--color-primary);
+    font-weight: 700;
+    background: var(--color-primary-soft);
+    border-color: var(--color-primary);
+    border-radius: 200px;
+}
+
+.filter-form__actions {
+    display: flex;
+    flex: 0 0 80px;
+    gap: 16px;
+    align-items: center;
+    padding: 16px 20px;
+    background: var(--color-background);
+}
+
+.action-button {
+    flex: 1;
+    height: 48px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    border-radius: 8px;
+}
+
+.action-button--reset {
+    color: var(--color-text-secondary);
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+}
+
+.action-button--submit {
+    color: #fff;
+    background: var(--color-primary);
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid #fe6565;
+    outline-offset: 2px;
+}
+
+@media (min-height: 741px) {
+    body {
+        padding-block: 20px;
+    }
+}

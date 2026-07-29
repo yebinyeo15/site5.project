@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="지도 검색 결과를 조건별로 선택하는 필터 화면" />
+        <title>지도 검색 필터</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body>
+        <p id="skipNav"><a href="#content">본문 바로가기</a></p>
+
+        <div id="wrap">
+            <main id="content" class="map-filter">
+                <img
+                    class="map-filter__map"
+                    src="images/map-background.png"
+                    alt="카페 검색 지역 지도"
+                />
+
+                <header class="search-panel">
+                    <div class="search-panel__bar">
+                        <button class="icon-button" type="button" aria-label="이전 화면">
+                            <img src="images/icon-back.svg" alt="" />
+                        </button>
+
+                        <label class="search-field">
+                            <span class="blind">장소 검색</span>
+                            <img class="search-field__icon" src="images/icon-search.svg" alt="" />
+                            <input class="search-field__input" type="search" value="카페" />
+                            <img class="search-field__cancel" src="images/icon-cancel.svg" alt="" />
+                        </label>
+                    </div>
+
+                    <nav class="category-nav" aria-label="장소 유형">
+                        <ul class="category-nav__list">
+                            <li>
+                                <button
+                                    class="category-chip category-chip--filter"
+                                    type="button"
+                                    aria-label="필터 열기"
+                                >
+                                    <img src="images/icon-filter.svg" alt="" />
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    class="category-chip category-chip--selected"
+                                    type="button"
+                                    aria-pressed="true"
+                                >
+                                    <img src="images/icon-cafe.svg" alt="" />
+                                    <span>카페</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="category-chip" type="button" aria-pressed="false">
+                                    <img src="images/icon-restaurant.svg" alt="" />
+                                    <span>음식점</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="category-chip" type="button" aria-pressed="false">
+                                    <img src="images/icon-drive.svg" alt="" />
+                                    <span>드라이브</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="category-chip" type="button" aria-pressed="false">
+                                    <img src="images/icon-stay.svg" alt="" />
+                                    <span>숙소</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="category-chip" type="button" aria-pressed="false">
+                                    <img src="images/icon-parking.svg" alt="" />
+                                    <span>주차장</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <section class="filter-sheet" aria-labelledby="filter-title">
+                    <div class="filter-sheet__handle" aria-hidden="true"></div>
+
+                    <header class="filter-sheet__header">
+                        <h1 id="filter-title">필터</h1>
+                        <button class="icon-button" type="button" aria-label="필터 닫기">
+                            <img src="images/icon-close.svg" alt="" />
+                        </button>
+                    </header>
+
+                    <form class="filter-form">
+                        <div class="filter-form__contents">
+                            <fieldset class="filter-group">
+                                <legend>분위기</legend>
+                                <div class="filter-group__chips">
+                                    <button class="filter-chip is-selected" type="button" aria-pressed="true">
+                                        포토스팟
+                                    </button>
+                                    <button class="filter-chip" type="button" aria-pressed="false">
+                                        무드가 예쁜
+                                    </button>
+                                    <button class="filter-chip" type="button" aria-pressed="false">
+                                        대화하기 좋은
+                                    </button>
+                                    <button class="filter-chip" type="button" aria-pressed="false">
+                                        이국적인 분위기
+                                    </button>
+                                    <button class="filter-chip" type="button" aria-pressed="false">
+                                        뷰가 좋은
+                                    </button>
+                                    <button class="filter-chip" type="button" aria-pressed="false">
+                                        플랜테리어
+                                    </button>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="filter-group">
+                                <legend>목적</legend>
+                                <div class="filter-group__chips">
+                                    <button class="filter-chip" type="button" aria-pressed="false">
+                                        독서/스터디
+                                    </button>
+                                    <button class="filter-chip is-selected" type="button" aria-pressed="true">
+                                        작업하기 좋은
+                                    </button>
+                                    <button class="filter-chip" type="button" aria-pressed="false">
+                                        데이트하기 좋은
+                                    </button>
+                                    <button class="filter-chip" type="button" aria-pressed="false">
+                                        오래 머물기 좋은
+                                    </button>
+                                    <button class="filter-chip" type="button" aria-pressed="false">
+                                        아이 동반 가능
+                                    </button>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="filter-group">
+                                <legend>편의시설</legend>
+                                <div class="filter-group__chips">
+                                    <button class="filter-chip" type="button" aria-pressed="false">
+                                        콘센트 있음
+                                    </button>
+                                    <button class="filter-chip" type="button" aria-pressed="false">
+                                        Wi-Fi 잘 터짐
+                                    </button>
+                                    <button class="filter-chip is-selected" type="button" aria-pressed="true">
+                                        좌석이 넉넉한
+                                    </button>
+                                    <button class="filter-chip" type="button" aria-pressed="false">
+                                        주차 가능
+                                    </button>
+                                    <button class="filter-chip" type="button" aria-pressed="false">
+                                        반려동물 동반 가능
+                                    </button>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="filter-form__actions">
+                            <button class="action-button action-button--reset" type="reset">초기화</button>
+                            <button class="action-button action-button--submit" type="submit">검색</button>
+                        </div>
+                    </form>
+                </section>
+            </main>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
